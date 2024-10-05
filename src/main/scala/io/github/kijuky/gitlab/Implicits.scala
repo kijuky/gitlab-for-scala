@@ -9,6 +9,9 @@ import org.gitlab4j.api.models._
 import scala.collection.JavaConverters._
 
 object Implicits {
+  def createGitLabClient(hostUrl: String, accessToken: String): GitLabApi =
+    new GitLabApi(hostUrl, accessToken)
+
   implicit class RichGitLab(gitlab: GitLabApi) {
     private implicit val implicitGitLab: GitLabApi = gitlab
     private lazy val serverUrl = gitlab.getGitLabServerUrl
