@@ -6,9 +6,7 @@ lazy val root = project
     crossScalaVersions := Seq(scalaVersion.value, "3.3.4"),
     libraryDependencies ++= Seq(
       "io.github.kijuky" %% "diff-for-scala" % "1.0.0",
-      "org.gitlab4j" % "gitlab4j-api" % "5.6.0",
-      "org.scalatest" %% "scalatest" % "3.2.19" % Test,
-      "org.slf4j" % "slf4j-simple" % "1.7.36" % Test
+      "org.gitlab4j" % "gitlab4j-api" % "5.6.0"
     )
   )
 
