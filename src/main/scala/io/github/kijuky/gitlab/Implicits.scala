@@ -7,6 +7,7 @@ import org.gitlab4j.api.GitLabApi
 import org.gitlab4j.api.models._
 
 import scala.collection.JavaConverters._
+import java.util.Date
 
 object Implicits {
   def createGitLabClient(hostUrl: String, accessToken: String): GitLabApi =
@@ -68,7 +69,7 @@ object Implicits {
           mergeRequest.projectId,
           mergeRequest.iid,
           body,
-          new java.util.Date(),
+          new Date(),
           null,
           null
         )
@@ -131,7 +132,7 @@ object Implicits {
               mergeRequest.projectId,
               mergeRequest.iid,
               body,
-              new java.util.Date(),
+              new Date(),
               null,
               position
             )
@@ -142,7 +143,7 @@ object Implicits {
               mergeRequest.projectId,
               mergeRequest.iid,
               s"$body\n\n(at $file#$line)",
-              new java.util.Date(),
+              new Date(),
               null,
               null
             )
