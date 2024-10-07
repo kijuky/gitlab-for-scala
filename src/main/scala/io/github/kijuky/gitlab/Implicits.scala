@@ -18,7 +18,6 @@ object Implicits {
     private lazy val serverUrl = gitlab.getGitLabServerUrl
     private lazy val projectPath = CIEnv.projectPath.getOrElse("")
     private lazy val projectId = CIEnv.projectId.map(_.toInt).getOrElse(0)
-    private lazy val userEmail = CIEnv.userEmail.getOrElse("")
     private lazy val projectBaseUrl = s"$serverUrl/$projectPath"
     private lazy val commitId = CIEnv.commitId.getOrElse("")
     private lazy val commitBaseUrl = s"$projectBaseUrl/-/commit"
@@ -28,6 +27,7 @@ object Implicits {
     private lazy val mrBaseUrl = s"$projectBaseUrl/-/merge_requests"
     private lazy val branchBaseUrl = s"$projectBaseUrl/-/tree"
 
+    lazy val userEmail: String = CIEnv.userEmail.getOrElse("")
     lazy val loginUser: String = CIEnv.loginUser.getOrElse("")
     lazy val branchName: String = CIEnv.branchName.getOrElse("")
     lazy val pipelineUrl = s"$pipelineBaseUrl/$pipelineId"
