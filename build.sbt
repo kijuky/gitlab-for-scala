@@ -3,7 +3,7 @@ lazy val root = project
   .settings(
     name := "gitlab-for-scala",
     scalaVersion := "2.12.20",
-    crossScalaVersions := Seq(scalaVersion.value, "3.3.4"),
+    crossScalaVersions := Seq(scalaVersion.value, "3.3.8"),
     libraryDependencies ++= Seq(
       "io.github.kijuky" %% "diff-for-scala" % "1.0.0",
       "org.gitlab4j" % "gitlab4j-api" % "5.7.0"
